@@ -1,0 +1,32 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+
+#components-form-demo-control-ref .ant-btn {
+  margin-right: 8px;
+}
+
+/* table, thead, tbody, tfoot, th, td, tr {
+  all: unset;
+} */
+
+td {
+  /* border: 1px solid black; */
+  vertical-align: auto;
+  /* padding: 5px; */
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+table td tr {
+  border-color: black;
+}
+
+@media print and (width: 21cm) and (height: 29.7cm) {
+  @page {
+    margin: 1cm;
+  }
+}
