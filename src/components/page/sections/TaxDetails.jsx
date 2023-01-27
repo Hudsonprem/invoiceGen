@@ -13,7 +13,7 @@ export default function TaxDetails({ ProductValue }) {
         dataAsGroup.map((data, index) => {
             return <tr key={index}>
                 <td>
-                    <div className='text-left text-sm  mr-2'>
+                    <div className='text-left text-sm  ml-2'>
                         {data.key}
                     </div>
                 </td>
