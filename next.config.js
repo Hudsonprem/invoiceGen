@@ -11,7 +11,7 @@ const nextConfig = {
   images: {
     unoptimized :true
   },
-  assetPrefix: !debug ? 'https://hudsonprem.github.io/invoice-gen/' : '',
+  assetPrefix: !debug ? 'https://hudsonprem.github.io/invoiceGen/' : '',
   // basePath: isProd ? basePath : "/",
     exportPathMap: function () {
       return {
