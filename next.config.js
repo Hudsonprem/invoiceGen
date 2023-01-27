@@ -2,9 +2,6 @@
 /** @type {import('next').NextConfig} */
 
 const debug = process.env.NODE_ENV !== "production";
-const repo = 'invoice-gen'
-const assetPrefix = `./`
-const basePath = `/${repo}`
 
 const nextConfig = {
   reactStrictMode: false,

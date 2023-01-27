@@ -1,16 +1,23 @@
 import React from 'react'
-import {rateCalulator} from "../../../utils/utils-function"
+import {rateCalulator, sumProductByGroup} from "../../../utils/utils-function"
+import _ from "lodash"
 
-export default function Product({ProductValue, idx, style}) {
+export default function Product({ProductValue, idx, style,isLast, arr}) {
     let {Description_of_Goods,HSN_SAC,Quantity, Quantity_Unit,Rate } = ProductValue
-  return ( <tr className='h-[3vh]'  style={{verticalAlign:"unset"}}>
+  
+    let dataAsGroup = _.chain(arr)
+    .groupBy("HSN_SAC")
+    .map((value, key) => ({ key, value }))
+    .value()
+
+  return ( <tr className={`h-[3vh]`}  style={{verticalAlign:"unset"}}>
                 <td style={style}>  
                     <div className='text-center text-sm'>
                        {idx}
                     </div>
                 </td>
                 <td style={style}>  
-                    <div className='text-center text-sm font-bold'>
+                    <div className='text-left text-sm font-bold ml-2'>
                     {Description_of_Goods}
                     </div>
                 </td>
@@ -25,7 +32,7 @@ export default function Product({ProductValue, idx, style}) {
                     </div>
                 </td>
                 <td style={style}>  
-                    <div className='text-center text-sm'>
+                    <div className='text-right text-sm mr-2'>
                     {Rate}
                     </div>
                 </td>
@@ -36,8 +43,11 @@ export default function Product({ProductValue, idx, style}) {
                 </td>
                 <td style={style}>  
                     <div className='text-right font-bold text-sm mr-2'>
-                    {rateCalulator(Quantity, Rate)}
+                    {rateCalulator(Quantity, Rate)}         
                     </div>
+                    {isLast && <div className='text-right  border-solid border-t border-x-0 border-b-0 border-black font-bold text-sm pr-2'>
+                    {sumProductByGroup(dataAsGroup)}
+                    </div>} 
                 </td>
             </tr>
   )

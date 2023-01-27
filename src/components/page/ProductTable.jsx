@@ -7,7 +7,7 @@ export default function ProductTable({productList}) {
   return (
     <table className='w-full text-center'  border="1">
             <tbody style={{borderBlockColor:"black"}}>
-            <tr className='w-full' style={{borderTop:"none"}}>
+            <tr className='w-full ' style={{borderTop:"none"}}>
                 <td className='w-1/12'>
                     <div className='text-sm'>
                     SI NO.
@@ -48,7 +48,7 @@ export default function ProductTable({productList}) {
         {productList?.products?.map((product, idx, arr)=>{
             let isLast = arr.length - 1 === idx
             let style =  false ? {borderTop:"none"} :  {borderTop:"none",borderBottom:"none"}
-                return <Product key={idx} ProductValue={product} idx={idx+1} style={style}/>
+                return <Product key={idx} ProductValue={product} idx={idx+1} style={style} isLast={isLast} arr={arr}/>
         })}
       
 
@@ -82,10 +82,10 @@ export default function ProductTable({productList}) {
                     </td>
                 <td style={{borderTop:"none"}}> 
                     <div className='text-right text-sm mr-2'>
-                      {SGST}
+                      {Number(SGST).toFixed(2)}
                     </div> 
                     <div className='text-right text-sm mr-2'>
-                      {CGST}
+                      {Number(CGST).toFixed(2)}
                     </div> 
                     <div className='text-right text-sm mr-2'>
                       <br />

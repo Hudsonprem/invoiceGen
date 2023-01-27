@@ -8,6 +8,7 @@ import isEmpty from 'lodash/isEmpty'
 export function ProductInfo({current,next,prev}){
   
   let dispatch = useDispatch()
+  const [form] = Form.useForm();
 
   const onFinish = (values) => {
     console.log(values);
@@ -20,7 +21,7 @@ export function ProductInfo({current,next,prev}){
     }
   };
 
-  
+
    return (
   <Form
     name="dynamic_form_nest_item"

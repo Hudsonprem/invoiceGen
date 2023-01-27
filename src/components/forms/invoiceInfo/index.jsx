@@ -29,20 +29,35 @@ export function InvoiceInfo({current,next,prev}) {
   const onFill = () => {
     form.setFieldsValue({
         Invoice_No: 86,
-        Invoice_Dated: "19-jan-2023",
-        Delivery_note:"SUPPLIERS PARK",
+        Invoice_Dated: "19-Jan-2023",
+        Delivery_note:"",
         Suppilers_ref:"SE-86",
         Mode_payment:"",
         Other_References:"",
         Buyers_Order_No:"6500032898",
-        Buyer_Dated: "18-jan-2023",
+        Buyer_Dated: "18-Jan-2023",
         Despatch_Document_No: "",
         Delivery_Note_Date: "",
         Despatch_through: "",
         Destination: "PLANT CODE : 1712",
-        Terms_of_Delivery: "Terms_of_Delivery",
-        
-
+        Terms_of_Delivery: "",
+    });
+  };
+  const onFill1 = () => {
+    form.setFieldsValue({
+        Invoice_No: 86,
+        Invoice_Dated: "19-Jan-2023",
+        Delivery_note:"",
+        Suppilers_ref:"SE-88",
+        Mode_payment:"",
+        Other_References:"",
+        Buyers_Order_No:"6500032401",
+        Buyer_Dated: "1-Oct-2021",
+        Despatch_Document_No: "",
+        Delivery_Note_Date: "",
+        Despatch_through: "",
+        Destination: "",
+        Terms_of_Delivery: "",
     });
   };
   return (
@@ -160,11 +175,6 @@ export function InvoiceInfo({current,next,prev}) {
       <Form.Item
         name="Destination"
         label="Destination"       
-        rules={[
-          {
-            required: true,
-          },
-        ]}
       >
         <Input />
       </Form.Item>
@@ -181,7 +191,10 @@ export function InvoiceInfo({current,next,prev}) {
           Reset
         </button>
         <button type='button'  onClick={onFill}>
-          Fill Default
+          Fill 1
+        </button>
+        <button type='button'  onClick={onFill1}>
+          Fill 2
         </button>
       </div>
 

@@ -25,7 +25,7 @@ export function BuyerInfo({current,next,prev}) {
   const onReset = () => {
     form.resetFields();
   };
-  const onFill = () => {
+  const onFill1 = () => {
     form.setFieldsValue({
         B_Company_Name: 'JBM AUTO LIMITED - ORAGADAM',
         B_Address_1:"Plot No: RNS-1 RENAULT NISSAN",
@@ -34,8 +34,28 @@ export function BuyerInfo({current,next,prev}) {
         B_GSTIN_UIN:"33AAACJ9630N1ZB",
         B_State_Name:"Tamil Nadu",
         B_Code:33
-        
-
+    });
+  };
+  const onFill2 = () => {
+    form.setFieldsValue({
+        B_Company_Name: 'JBM AUTO LIMITED',
+        B_Address_1:"Ford Suppliers,Port, No.1 , S.P Koil Street",
+        B_Address_2:"Chengalpettu Taluk",
+        B_Address_3:"Kanchipuram",
+        B_GSTIN_UIN:"33AAACJ9630N1ZB",
+        B_State_Name:"Tamil Nadu",
+        B_Code:33
+    });
+  };
+  const onFill3 = () => {
+    form.setFieldsValue({
+        B_Company_Name: 'JBM AUTO LIMITED',
+        B_Address_1:"",
+        B_Address_2:"",
+        B_Address_3:"ORAGADAM-603109",
+        B_GSTIN_UIN:"33AAACJ9630N1ZB",
+        B_State_Name:"Tamil Nadu",
+        B_Code:33
     });
   };
   return (
@@ -135,8 +155,14 @@ export function BuyerInfo({current,next,prev}) {
         <button type='button'  onClick={onReset}>
           Reset
         </button>
-        <button type='button'  onClick={onFill}>
-          Fill Default
+        <button type='button'  onClick={onFill1}>
+          Fill 1
+        </button>
+        <button type='button'  onClick={onFill2}>
+          Fill 2
+        </button>
+        <button type='button'  onClick={onFill3}>
+          Fill 3
         </button>
       </div>
 

@@ -15,7 +15,7 @@ export default function NumberInWord({totalPrice}) {
      </div>
 
      {/* Number in word section */}
-       <div className='flex justify-start w-full py-2 font-bold '>
+       <div className='flex justify-start w-full py-2 font-bold text-sm'>
          <div>
              INR {numberToWordConvert(totalPrice)}
          </div>
