@@ -60,6 +60,23 @@ export function InvoiceInfo({current,next,prev}) {
         Terms_of_Delivery: "",
     });
   };
+  const onFill2 = () => {
+    form.setFieldsValue({
+        Invoice_No: 86,
+        Invoice_Dated: "19-Jan-2023",
+        Delivery_note:"",
+        Suppilers_ref:"SE-88",
+        Mode_payment:"",
+        Other_References:"",
+        Buyers_Order_No:"65000295110",
+        Buyer_Dated: "1-Oct-2021",
+        Despatch_Document_No: "",
+        Delivery_Note_Date: "",
+        Despatch_through: "",
+        Destination: "",
+        Terms_of_Delivery: "",
+    });
+  };
   return (
     <Form
        
@@ -195,6 +212,9 @@ export function InvoiceInfo({current,next,prev}) {
         </button>
         <button type='button'  onClick={onFill1}>
           Fill 2
+        </button>
+        <button type='button'  onClick={onFill2}>
+          Fill 3
         </button>
       </div>
 

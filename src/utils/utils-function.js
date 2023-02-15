@@ -76,7 +76,7 @@ function totalPair(productsArray) {
         return Quantity
         })
     let Total = sum(TotalPair);
-    return `${Number(Total).toFixed(2)}`
+    return `${Number(Total)}`
 }
 
 function sumProduct(productsArray) {

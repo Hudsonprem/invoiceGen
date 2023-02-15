@@ -11,7 +11,7 @@ export default function Head({role}) {
                 Tax Invoice
             </div>
             <div className='text-right italic text-xs'>
-                (TRIPLICATE FOR {capitalize(role)})
+                {capitalize(role)}
             </div>
         </div>
     )

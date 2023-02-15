@@ -10,9 +10,9 @@ const PAGEROLE = [
         value: "Transporter"
     },
     {
-        name : "office",
-        lable: "office",
-        value: "office"
+        name : "Original",
+        lable: "Original",
+        value: "Original"
     }
 ]
 
@@ -152,14 +152,14 @@ const SampleData = {
                 "Description_of_Goods": "18\" JEANS ARM SLEEVES",
                 "HSN_SAC": "52094200",
                 "Quantity": "200",
-                "Quantity_Unit": "Pair",
+                "Quantity_Unit": "pair",
                 "Rate": "68.25"
             },
             {
                 "Description_of_Goods": "Cotton Apron",
                 "HSN_SAC": "6116",
                 "Quantity": "90",
-                "Quantity_Unit": "No's",
+                "Quantity_Unit": "Nos",
                 "Rate": "35.75"
             }
         ]
@@ -167,7 +167,7 @@ const SampleData = {
     "roles": [
         "Supplier",
         "Transporter",
-        "office"
+        "Original"
     ]
 }
 

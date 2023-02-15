@@ -2,7 +2,7 @@ import React from 'react'
 import {rateCalulator, sumProductByGroup} from "../../../utils/utils-function"
 import _ from "lodash"
 
-export default function Product({ProductValue, idx, style,isLast, arr}) {
+export default function Product({ProductValue, idx, style,isLast, isOne, arr}) {
     let {Description_of_Goods,HSN_SAC,Quantity, Quantity_Unit,Rate } = ProductValue
   
     let dataAsGroup = _.chain(arr)
@@ -45,7 +45,7 @@ export default function Product({ProductValue, idx, style,isLast, arr}) {
                     <div className='text-right font-bold text-sm mr-2'>
                     {rateCalulator(Quantity, Rate)}         
                     </div>
-                    {isLast && <div className='text-right  border-solid border-t border-x-0 border-b-0 border-black font-bold text-sm pr-2'>
+                    {isLast &&  isOne !== 0 && <div className='text-right  border-solid border-t border-x-0 border-b-0 border-black font-bold text-sm pr-2'>
                     {sumProductByGroup(dataAsGroup)}
                     </div>} 
                 </td>

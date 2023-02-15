@@ -48,7 +48,7 @@ export default function ProductTable({productList}) {
         {productList?.products?.map((product, idx, arr)=>{
             let isLast = arr.length - 1 === idx
             let style =  false ? {borderTop:"none"} :  {borderTop:"none",borderBottom:"none"}
-                return <Product key={idx} ProductValue={product} idx={idx+1} style={style} isLast={isLast} arr={arr}/>
+                return <Product key={idx} ProductValue={product} idx={idx+1} style={style} isLast={isLast} isOne={idx} arr={arr}/>
         })}
       
 

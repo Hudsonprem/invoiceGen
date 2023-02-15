@@ -111,7 +111,12 @@ export function ProductInfo({current,next,prev}){
             </Space>
           ))}
           <Form.Item>
-            <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />}>
+            <Button type="dashed" onClick={() => add({
+              Description_of_Goods:'18" DENIM ARM SLEEVES',
+              HSN_SAC:"52094200",
+              Quantity_Unit:"Pair",
+              Rate:68.25
+            })} block icon={<PlusOutlined />}>
               Add Product
             </Button>
           </Form.Item>
