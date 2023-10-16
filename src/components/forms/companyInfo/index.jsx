@@ -135,7 +135,7 @@ export function CompanyInfo({current,next}) {
           Reset
         </button>
         <button type='button'  onClick={onFill}>
-          Fill Default
+          Starwin
         </button>
       </div>
 
@@ -143,7 +143,7 @@ export function CompanyInfo({current,next}) {
       <div className='flex justify-between my-2'>
         <Button type="primary" htmlType="submit">
           Submit and Next
-        </Button>
+        </Button> 
       </div>
      
     </Form>

@@ -62,7 +62,7 @@ export function ExtraInfo({current,next,prev}) {
           Reset
         </button>
         <button type='button'  onClick={onFill}>
-          Fill Default
+          Starwin
         </button>
       </div>
 

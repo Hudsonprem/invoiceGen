@@ -1,14 +1,54 @@
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-import { Button, Form, Input, Space,message } from 'antd';
+import { Button, Form, Input, Space,message, AutoComplete } from 'antd';
 import {useDispatch, useSelector} from "react-redux"
 import {addProductInfo} from "../../../utils/redux/slice/page.slice"
 import isEmpty from 'lodash/isEmpty'
 
-
 export function ProductInfo({current,next,prev}){
   
   let dispatch = useDispatch()
-  const [form] = Form.useForm();
+ 
+  const GoodsOptions = [
+    {
+      value: '18" DENIM ARM SLEEVES (ITEMCODE : 6011835)',
+    },
+    {
+      value: 'Cotton Apron (ITEMCODE : 6000863)',
+    },
+    {
+      value: '18" Leather Leg guard',
+    },
+    {
+      value: 'Cotton Apron (Blue)',
+    },
+    {
+      value: 'Cotton waste',
+    },
+  ];
+  
+  const codeOptions = [
+    {
+      value: '5202',
+    },
+    {
+      value: '6116',
+    },
+    {
+      value: '42032910',
+    },
+    {
+      value: '52094200',
+    }
+  ];
+
+  const unitOptions = [
+    {
+      value: 'pair',
+    },
+    {
+      value: 'pcs',
+    }
+  ];
 
   const onFinish = (values) => {
     console.log(values);
@@ -21,24 +61,23 @@ export function ProductInfo({current,next,prev}){
     }
   };
 
-
    return (
   <Form
     name="dynamic_form_nest_item"
     onFinish={onFinish}
     style={{
-      maxWidth: 600,
+      maxWidth: 800,
     }}
     className={`w-[60vw] px-5 ${current ? "" : "hidden"}`}
     autoComplete="off"
   >
-    <Form.List name="products">
+    <Form.List name="products" >
       {(fields, { add, remove }) => (
         <>
           {fields.map(({ key, name, ...restField }) => (
             <Space
               key={key}
-              className='flex md:flex-row flex-col'
+              className='flex flex-col '              
               style={{
                 marginBottom: 8,
               }}
@@ -46,7 +85,7 @@ export function ProductInfo({current,next,prev}){
             >
               <Form.Item
                 {...restField}
-                name={[name, 'Description_of_Goods']}
+                name={[name, 'Description_of_Goods']} 
                 rules={[
                   {
                     required: true,
@@ -54,7 +93,13 @@ export function ProductInfo({current,next,prev}){
                   },
                 ]}
               >
-                <Input placeholder="Description of Goods" />
+                <AutoComplete 
+                placeholder="Description of Goods"  
+                style={{ width: "50vw" }}  
+                filterOption={(inputValue, option) =>
+                  option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                }
+                options={GoodsOptions}/>
               </Form.Item>
               <Form.Item
                 {...restField}
@@ -66,7 +111,13 @@ export function ProductInfo({current,next,prev}){
                   },
                 ]}
               >
-                <Input placeholder="HSN / SAC" />
+                <AutoComplete 
+                  placeholder="HSN / SAC"  
+                  style={{ width: "50vw" }}  
+                  filterOption={(inputValue, option) =>
+                    option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                  }
+                  options={codeOptions}/>
               </Form.Item>
 
               <Form.Item
@@ -79,7 +130,7 @@ export function ProductInfo({current,next,prev}){
                   },
                 ]}
               >
-                <Input type='Number' placeholder="Quantity"/>
+                <Input type='Number' placeholder="Quantity" />
               </Form.Item>
 
               <Form.Item
@@ -92,7 +143,14 @@ export function ProductInfo({current,next,prev}){
                   },
                 ]}
               >
-                <Input placeholder="Unit" />
+                <AutoComplete 
+                  placeholder="Unit" 
+                  style={{ width: 150 }}  
+                  filterOption={(inputValue, option) =>
+                    option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                  }
+                  options={unitOptions}/>
+
               </Form.Item>
               <Form.Item
                 {...restField}

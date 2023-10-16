@@ -8,13 +8,14 @@ import HeadSection from '../components/page/Head'
 import {useDispatch, useSelector} from "react-redux"
 import React,{useState, useEffect} from 'react'
 import isEmpty from 'lodash/isEmpty'
-import {SampleData,CGST,SGST} from "../utils/constants/app.constant"
+import {SampleData} from "../utils/constants/app.constant"
 import {totalAmount} from "../utils/utils-function"
 
 export default function Page() 
 {
   let pageData = useSelector((state)=>state.pageData)
   let roleList = useSelector((state)=>state.pageData.roles)
+  let {CGST,SGST} = useSelector((state)=>state.pageData)
 
   const [data, setData] = useState(SampleData)
   const [AllRoles, setAllRoles] = useState(SampleData.roles)

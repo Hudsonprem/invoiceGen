@@ -1,11 +1,11 @@
 import React from 'react'
 import TaxDetails from "./sections/TaxDetails"
 import {sumProductByGroup,sumGSTByGroup,totalGSTByGroup} from "../../utils/utils-function"
-import {CGST,SGST} from "../../utils/constants/app.constant"
 import _ from 'lodash';
+import {useDispatch, useSelector} from "react-redux"
 
 export default function PayDetails({productList}) {
-
+    let {CGST,SGST} = useSelector((state)=>state.pageData)
     let dataAsGroup = _.chain(productList.products)
     .groupBy("HSN_SAC")
     .map((value, key) => ({ key, value }))

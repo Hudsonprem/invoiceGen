@@ -4,5 +4,7 @@ export const initialPage = {
     extraInfo: {},
     invoiceInfo: {},
     productInfo : {},
-    roles : []
+    roles : [],
+    SGST: 2.5,
+    CGST: 2.5
 }

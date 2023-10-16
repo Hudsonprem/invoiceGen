@@ -28,31 +28,31 @@ export function InvoiceInfo({current,next,prev}) {
   };
   const onFill = () => {
     form.setFieldsValue({
-        Invoice_No: 86,
-        Invoice_Dated: "19-Jan-2023",
+        Invoice_No: 1,
+        Invoice_Dated: "17-Oct-2023",
         Delivery_note:"",
-        Suppilers_ref:"SE-86",
+        Suppilers_ref:"SE-1",
         Mode_payment:"",
         Other_References:"",
-        Buyers_Order_No:"6500032898",
-        Buyer_Dated: "18-Jan-2023",
+        Buyers_Order_No:"6500026040",
+        Buyer_Dated: "29-Jan-2023",
         Despatch_Document_No: "",
         Delivery_Note_Date: "",
         Despatch_through: "",
-        Destination: "PLANT CODE : 1712",
+        Destination: "PLANT CODE : 1711",
         Terms_of_Delivery: "",
     });
   };
   const onFill1 = () => {
     form.setFieldsValue({
-        Invoice_No: 86,
-        Invoice_Dated: "19-Jan-2023",
+        Invoice_No: 1,
+        Invoice_Dated: "17-Oct-2023",
         Delivery_note:"",
-        Suppilers_ref:"SE-88",
+        Suppilers_ref:"SE-1",
         Mode_payment:"",
         Other_References:"",
         Buyers_Order_No:"6500032401",
-        Buyer_Dated: "1-Oct-2021",
+        Buyer_Dated: "01-Oct-2021",
         Despatch_Document_No: "",
         Delivery_Note_Date: "",
         Despatch_through: "",
@@ -62,14 +62,14 @@ export function InvoiceInfo({current,next,prev}) {
   };
   const onFill2 = () => {
     form.setFieldsValue({
-        Invoice_No: 86,
-        Invoice_Dated: "19-Jan-2023",
+        Invoice_No: 1,
+        Invoice_Dated: "17-Oct-2023",
         Delivery_note:"",
-        Suppilers_ref:"SE-88",
+        Suppilers_ref:"",
         Mode_payment:"",
         Other_References:"",
-        Buyers_Order_No:"65000295110",
-        Buyer_Dated: "1-Oct-2021",
+        Buyers_Order_No:"6500029511",
+        Buyer_Dated: "13-Dec-2021",
         Despatch_Document_No: "",
         Delivery_Note_Date: "",
         Despatch_through: "",
@@ -86,6 +86,25 @@ export function InvoiceInfo({current,next,prev}) {
       onFinish={onFinish}
         className={`w-[60vw] px-5 ${current ? "" : "hidden"}`}
     >
+
+
+    <div className='flex flex-wrap w-full  gap-3'>
+        <button type='button'  onClick={onReset}>
+          Reset
+        </button>
+        <button type='button'  onClick={onFill}>
+          JBM -Oragadam
+        </button>
+        <button type='button'  onClick={onFill1}>
+          JBM
+        </button>
+        <button type='button'  onClick={onFill2}>
+          Neel
+        </button>
+      </div>
+
+      <br />  
+
       <Form.Item
         name="Invoice_No"
         label="Invoice No"
@@ -203,20 +222,7 @@ export function InvoiceInfo({current,next,prev}) {
         <Input />
       </Form.Item>
      
-      <div className='flex w-full ml-10 gap-3'>
-        <button type='button'  onClick={onReset}>
-          Reset
-        </button>
-        <button type='button'  onClick={onFill}>
-          Fill 1
-        </button>
-        <button type='button'  onClick={onFill1}>
-          Fill 2
-        </button>
-        <button type='button'  onClick={onFill2}>
-          Fill 3
-        </button>
-      </div>
+      
 
       <div className='flex justify-between my-2'>
         <Button type="primary" htmlType="submit">

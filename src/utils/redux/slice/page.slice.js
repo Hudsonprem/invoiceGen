@@ -23,8 +23,14 @@ const pageSlice = createSlice({
         addRole(state,action){
             state.roles = action.payload
         },
+        changeCGST(state,action){
+            state.CGST = action.payload
+        },
+        changeSGST(state,action){
+            state.SGST = action.payload
+        },
     }
 })
 
-export const {addRole, addBuyerProfile,addCompanyProfile,addExtraInfo,addInvoiceInfo,addProductInfo} = pageSlice.actions
+export const {changeCGST, changeSGST, addRole, addBuyerProfile,addCompanyProfile,addExtraInfo,addInvoiceInfo,addProductInfo} = pageSlice.actions
 export default pageSlice.reducer

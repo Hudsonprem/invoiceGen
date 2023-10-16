@@ -1,9 +1,11 @@
 import React from 'react'
 import {numberToWordConvert,totalGSTByGroup} from "../../utils/utils-function"
-import {CGST,SGST} from "../../utils/constants/app.constant"
 import _ from "lodash"
+import { useSelector} from "react-redux"
+
 export default function Footer({productList,extraInfo}) {
     let {H_Company_Pan } = extraInfo
+    let {CGST,SGST} = useSelector((state)=>state.pageData)
 
     let dataAsGroup = _.chain(productList.products)
     .groupBy("HSN_SAC")

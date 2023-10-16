@@ -54,17 +54,30 @@ function GSTPerCalulator(productsArray, gst) {
 
 function roundOff(productsArray, gst1, gst2)
 {
+    let productRate = productsArray.map((e) => e.Rate * Number(e.Quantity))
+
     let value1 = GSTPerCalulator(productsArray, gst1)
     let value2 = GSTPerCalulator(productsArray, gst2)
-    let Total = sum([Number(value1), Number(value2)]);
-    let decimal = Total.toString().split(".")[0]
-    let result = Number(Total) - Number(decimal) 
-    if(Number(1 - result) === 1)
+    let value3 = productRate.reduce((partialSum, a) => Number(partialSum) + Number(a), 0);
+    let valueAsNumber = [value1, value2, value3].reduce((partialSum, a) => Number(partialSum) + Number(a), 0);
+  
+    let TotalSum = Number(valueAsNumber).toFixed(2)
+
+    let floatValue = TotalSum.toString().split(".")[1]
+
+    if(floatValue == "00")
     {
         return 0
     }else{
-        return Number(1 - result).toFixed(2)
+    
+        let roundedSum = Math.ceil(Number(TotalSum))
+        let roundedoffValue = roundedSum - Number(TotalSum)
+    
+    
+        console.log(roundedSum, roundedoffValue);
+        return roundedoffValue.toFixed(2)
     }
+
 }
 
 
@@ -142,7 +155,7 @@ function totalAmount(productsArray, gst1, gst2) {
         let Rate = Number(product["Rate"])
         return Number(rateCalulator(Quantity, Rate))
     })
-    console.log();
+  
     // Totel Amount 
     let value = sum(TotalQuantity);
 

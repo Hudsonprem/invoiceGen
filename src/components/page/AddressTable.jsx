@@ -3,7 +3,7 @@ import isEmpty from 'lodash/isEmpty'
 
 export default function AddressTable({companyProfile, buyerProfile,invoiceInfo}) {
     let { H_Company_Name,H_Address_1,H_Address_2,H_Address_3, H_GSTIN_UIN,  H_State_Name, H_Code} = companyProfile
-    let { B_Company_Name,B_Address_1,B_Address_2,B_Address_3, B_GSTIN_UIN,  B_State_Name, B_Code} = buyerProfile
+    let { B_Company_Name,B_Address_1,B_Address_2,B_Address_3,B_Address_4, B_GSTIN_UIN,  B_State_Name, B_Code} = buyerProfile
     let { Invoice_No,Invoice_Dated,Delivery_note,Mode_payment, Suppilers_ref,  Other_References, Buyers_Order_No, Buyer_Dated, Despatch_Document_No,Delivery_Note_Date,Despatch_through,Destination, Terms_of_Delivery } = invoiceInfo
   return (
     <table className='w-full ' border="1">
@@ -27,7 +27,7 @@ export default function AddressTable({companyProfile, buyerProfile,invoiceInfo})
                                    GSTIN/UIN : {H_GSTIN_UIN}
                                 </div>
                                 <div>
-                                   State Name {H_State_Name}, Code : {H_Code}
+                                   State Name : {H_State_Name}, Code : {H_Code}
                                 </div>
                     </div>
                 </td>
@@ -115,10 +115,13 @@ export default function AddressTable({companyProfile, buyerProfile,invoiceInfo})
                                     {B_Address_3}
                                 </div>
                                 <div>
+                                    {B_Address_4}
+                                </div>
+                                <div>
                                    GSTIN/UIN : {B_GSTIN_UIN}
                                 </div>
                                 <div>
-                                   State Name {B_State_Name}, Code : {B_Code}
+                                   State Name : {B_State_Name}, Code : {B_Code}
                                 </div>
                     </div>
                 </td>

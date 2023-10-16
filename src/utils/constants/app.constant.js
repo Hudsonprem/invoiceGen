@@ -1,5 +1,10 @@
 const PAGEROLE = [
     {
+        name : "Original",
+        lable: "Original",
+        value: "Original"
+    },
+    {
         name : "Supplier",
         lable: "Supplier",
         value: "Supplier"
@@ -8,13 +13,29 @@ const PAGEROLE = [
         name : "Transporter",
         lable: "Transporter",
         value: "Transporter"
+    }    
+]
+
+const GSTLIST = [
+    {
+        name : 2.5,
+        lable: 2.5,
+        value: 2.5
     },
     {
-        name : "Original",
-        lable: "Original",
-        value: "Original"
-    }
+        name : 9,
+        lable: 9,
+        value: 9
+    },   
+    {
+        name : 18,
+        lable: 18,
+        value: 18
+    },
 ]
+
+// const SGST = 9
+// const CGST = 9
 
 const SGST = 2.50
 const CGST = 2.50
@@ -165,9 +186,9 @@ const SampleData = {
         ]
     },
     "roles": [
-        "Supplier",
+        "Original",
         "Transporter",
-        "Original"
+        "Supplier"
     ]
 }
 
@@ -176,5 +197,6 @@ export {
     STEPS,
     SampleData,
     CGST,
-    SGST
+    SGST,
+    GSTLIST
 }

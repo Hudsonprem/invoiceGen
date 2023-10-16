@@ -1,8 +1,10 @@
 import React from 'react'
 import _ from 'lodash';
 import {sumProduct,GSTPerCalulator,sumGST} from "../../../utils/utils-function" 
-import {CGST,SGST} from "../../../utils/constants/app.constant" 
+import { useSelector} from "react-redux"
+
 export default function TaxDetails({ ProductValue }) {
+    let {CGST,SGST} = useSelector((state)=>state.pageData)
 
     let dataAsGroup = _.chain(ProductValue)
         .groupBy("HSN_SAC")
