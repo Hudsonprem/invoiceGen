@@ -16,6 +16,9 @@ export function ProductInfo({current,next,prev}){
       value: 'Cotton Apron (ITEMCODE : 6000863)',
     },
     {
+      value: "14'' Cotton Gloves with Lining",
+    },
+    {
       value: '18" Leather Leg guard',
     },
     {

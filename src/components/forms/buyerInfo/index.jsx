@@ -85,6 +85,7 @@ export function BuyerInfo({current,next,prev}) {
           B_Code:33
       });
   };
+  
 
   const onFill6 = () => {
     form.setFieldsValue({
@@ -98,6 +99,20 @@ export function BuyerInfo({current,next,prev}) {
         B_Code:33
     });
 };
+
+const onFill7 = () => {
+  form.setFieldsValue({
+      B_Company_Name: 'UTTURAMMA ENTERPRISES',
+      B_Address_1:"Tubinakere Industrial Area",
+      B_Address_2:"Mandya-571402",
+      B_Address_3:"",
+      B_Address_4:"",
+      B_GSTIN_UIN:"29LDMPS8235D1ZT",
+      B_State_Name:"Karnataka",
+      B_Code:29
+  });
+};
+
 
   return (
     <Form       
@@ -128,6 +143,9 @@ export function BuyerInfo({current,next,prev}) {
         </button>
         <button type='button'  onClick={onFill6}>
             Safeboy
+        </button>
+        <button type='button'  onClick={onFill7}>
+            UTTURAMA
         </button>
       </div>
 

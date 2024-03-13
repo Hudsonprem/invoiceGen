@@ -31,7 +31,7 @@ const handleChange = (value) => {
     {GSTLIST.map((role)=>{
     return <Option key={role.value } value={role.value} label={role.lable}>
               <Space>
-                {role.name} [SGST]
+                {role.name} {role.name === 18 || role.name === 5 ? "[IGST]" : "[SGST]" }
               </Space>
            </Option>
 

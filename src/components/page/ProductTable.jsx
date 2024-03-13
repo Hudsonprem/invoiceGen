@@ -7,27 +7,27 @@ export default function ProductTable({productList}) {
   let {CGST,SGST} = useSelector((state)=>state.pageData)
 
 
-  function gstRender(CGST_value) {    
-    if( CGST_value === 18) {
+  function gstRender(CGST_value, SGST_value) {    
+    if( SGST_value === 0) {
         return <>
                 <div className='text-right text-sm mr-2'>
-                    Output Igst @ {CGST}%
+                    Output Igst @ {CGST_value}%
                 </div>            
             </>
     } else {
         return <>
                 <div className='text-right text-sm mr-2'>
-                    Output Sgst @ {SGST}%
+                    Output Sgst @ {SGST_value}%
                 </div> 
                 <div className='text-right text-sm mr-2'>
-                    Output Cgst @ {CGST}%
+                    Output Cgst @ {SGST_value}%
                 </div> 
             </>
     }
   }
 
-  function percentageRender(CGST_value) {    
-    if( CGST_value === 18) {
+  function percentageRender(SGST_value) {    
+    if( SGST_value === 0) {
         return <>
              <div className='text-right text-sm mr-2'>
                        %
@@ -45,8 +45,8 @@ export default function ProductTable({productList}) {
     }
   }
 
-  function rateRender(CGST_value) {    
-    if( CGST_value === 18) {
+  function rateRender(CGST_value , SGST_value) {    
+    if( SGST_value === 0) {
         return <>
                <div className='text-right text-sm mr-2'>
                       {Number(CGST_value).toFixed(2)}
@@ -55,29 +55,29 @@ export default function ProductTable({productList}) {
     } else {
         return <>
                 <div className='text-right text-sm mr-2'>
-                      {Number(SGST).toFixed(2)}
+                      {Number(SGST_value).toFixed(2)}
                 </div> 
                 <div className='text-right text-sm mr-2'>
-                      {Number(CGST).toFixed(2)}
+                      {Number(CGST_value).toFixed(2)}
                 </div> 
             </>
     }
   }
 
-  function amountRender(CGST_value) {    
-    if( CGST_value === 18) {
+  function amountRender(CGST_value, SGST_value) {    
+    if( SGST_value === 0) {
         return <>
                 <div className='text-right font-bold text-sm mr-2'>
-                      {GSTPerCalulator(productList.products,CGST)}
+                      {GSTPerCalulator(productList.products,CGST_value)}
                 </div>           
             </>
     } else {
         return <>
                 <div className='text-right font-bold text-sm mr-2'>
-                      {GSTPerCalulator(productList.products,SGST)}
+                      {GSTPerCalulator(productList.products,SGST_value)}
                 </div> 
                 <div className='text-right font-bold text-sm mr-2'>
-                      {GSTPerCalulator(productList.products,CGST)}
+                      {GSTPerCalulator(productList.products,CGST_value)}
                  </div> 
             </>
     }
@@ -139,7 +139,7 @@ export default function ProductTable({productList}) {
                     </div>
                      </td>
                 <td className='font-bold italic' style={{borderTop:"none"}} > 
-                    {gstRender(CGST)}
+                    {gstRender(CGST, SGST)}
                     <div className='text-right text-sm mr-2'>
                        Round Off
                     </div> 
@@ -155,19 +155,19 @@ export default function ProductTable({productList}) {
                     </div>
                     </td>
                 <td style={{borderTop:"none"}}> 
-                    {rateRender(CGST)}                   
+                    {rateRender(CGST, SGST)}                   
                     <div className='text-right text-sm mr-2'>
                       <br />
                     </div> 
                     </td>
                 <td style={{borderTop:"none"}}> 
-                    {percentageRender(CGST)}
+                    {percentageRender(SGST)}
                     <div className='text-right text-sm mr-2'>
                       <br />
                     </div> 
                     </td>
                 <td style={{borderTop:"none"}}> 
-                    {amountRender(CGST)} 
+                    {amountRender(CGST, SGST)} 
                     <div className='text-right font-bold text-sm mr-2'>
                      {roundOff(productList.products,CGST,SGST)}
                     </div> 

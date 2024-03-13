@@ -18,15 +18,20 @@ const PAGEROLE = [
 
 const GSTLIST = [
     {
-        name : 2.5,
+        name : "2.5 + 2.5",
         lable: 2.5,
         value: 2.5
     },
     {
-        name : 9,
+        name : "9 + 9",
         lable: 9,
         value: 9
     },   
+    {
+        name : 5,
+        lable: 5,
+        value: 5
+    },
     {
         name : 18,
         lable: 18,

@@ -2,6 +2,7 @@ import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import TypeSelect from './TypeSelect';
 import TypeCGST from './TypeCGST';
 import TypeSGST from './TypeSGST';
+import TypeGST from './TypeGST';
 const { Header, Content, Footer } = Layout;
 
 export function LayoutComponent({children})
@@ -32,12 +33,12 @@ export function LayoutComponent({children})
           <div className='w-80 '>
           <TypeSelect />
           </div>
-          <div className='w-80 '>
-          <TypeCGST />
+          <div className='w-96 '>
+          <TypeGST />
           </div>
-          <div className='w-80 '>
+          {/* <div className='w-80 '>
           <TypeSGST />
-          </div>
+          </div> */}
             <button
              type='button'
         className=' bg-green-300 my-3 h-10 flex justify-center items-center px-4 cursor-pointer rounded-md'
