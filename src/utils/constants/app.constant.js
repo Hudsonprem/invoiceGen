@@ -39,6 +39,19 @@ const GSTLIST = [
     },
 ]
 
+const INVOICETYPELIST = [
+    {
+        name : "Tax Invoice",
+        lable: "Tax Invoice",
+        value: "Tax Invoice"
+    },
+    {
+        name : "Proforma Invoice",
+        lable: "Proforma Invoice",
+        value: "Proforma Invoice"
+    },  
+]
+
 // const SGST = 9
 // const CGST = 9
 
@@ -203,5 +216,6 @@ export {
     SampleData,
     CGST,
     SGST,
-    GSTLIST
+    GSTLIST,
+    INVOICETYPELIST
 }

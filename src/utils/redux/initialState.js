@@ -6,5 +6,6 @@ export const initialPage = {
     productInfo : {},
     roles : [],
     SGST: 2.5,
-    CGST: 2.5
+    CGST: 2.5,
+    invoiceType: "Tax Invoice",
 }

@@ -1,7 +1,6 @@
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import TypeSelect from './TypeSelect';
-import TypeCGST from './TypeCGST';
-import TypeSGST from './TypeSGST';
+import TypeInvoice from './TypeInvoice';
 import TypeGST from './TypeGST';
 const { Header, Content, Footer } = Layout;
 
@@ -28,23 +27,18 @@ export function LayoutComponent({children})
         type='button'
         className=' bg-blue-300 my-3 h-10 flex justify-center  items-center px-4 cursor-pointer rounded-md'
         >
-          Invoice GEN
+          Invoice Master
           </button>
+          <div className='w-80 '>
+          <TypeInvoice />
+          </div>
           <div className='w-80 '>
           <TypeSelect />
           </div>
-          <div className='w-96 '>
+          <div className='w-60'>
           <TypeGST />
           </div>
-          {/* <div className='w-80 '>
-          <TypeSGST />
-          </div> */}
-            <button
-             type='button'
-        className=' bg-green-300 my-3 h-10 flex justify-center items-center px-4 cursor-pointer rounded-md'
-        >
-          Generate Invoice
-          </button>
+ 
           </div>
       </Header>
 
