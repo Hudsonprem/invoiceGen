@@ -27,7 +27,7 @@ export function LayoutComponent({children})
         type='button'
         className=' bg-blue-300 my-3 h-10 flex justify-center  items-center px-4 cursor-pointer rounded-md'
         >
-          Invoice Master
+          Invoice Gen
           </button>
           <div className='w-80 '>
           <TypeInvoice />
